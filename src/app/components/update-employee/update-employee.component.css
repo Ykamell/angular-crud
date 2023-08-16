@@ -1,0 +1,45 @@
+.container {
+  margin-top: 5%;
+}
+
+.head-properties {
+  background-color: rgb(103, 26, 175) !important;
+  padding: 2%;
+} 
+
+.title-form {
+  color: white
+}
+
+.btn-custom {
+  background-color: rgb(25, 150, 150);
+  color: white;
+  margin-right: 2%;
+}
+
+.btn-custom:hover {
+  background-color: rgb(37, 185, 185);
+  color: white
+}
+
+.create-employee-form {
+  margin: 2%;
+}
+
+.row {
+  margin-bottom: 2%;
+}
+
+.btn-set {
+  justify-content: center;
+}
+
+.error-form {
+  background-color: rgb(131, 0, 0);
+  color: white;
+}
+
+.done-form {
+  background-color: rgb(16, 189, 0);
+  color: white;
+}

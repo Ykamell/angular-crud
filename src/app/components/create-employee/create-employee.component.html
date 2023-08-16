@@ -1,0 +1,84 @@
+<div class="container">
+
+  <div class="card "> 
+    
+    <div class="card-header head-properties ">
+      <span class="mb-0 h1 title-form">Añadir nuevo empleado</span>
+    </div>
+
+    <div class="card-body">
+
+      <form [formGroup]="newEmployee" class="create-employee-form"  (ngSubmit)="saveEmployee()">
+
+        <div class="row">
+
+          <div class="col">
+            <label> Nombres </label>
+            <input type="text" class="form-control" placeholder="Nombres" formControlName="nombre">
+          </div>
+
+          <div class="col">
+            <label> Apellidos </label>
+            <input type="text" class="form-control" placeholder="Apellidos" formControlName="apellido">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label> Fecha de nacimiento </label>
+            <input type="date" class="form-control" placeholder="Fecha de nacimiento" formControlName="birthday">
+          </div>
+
+          <div class="col">
+            <label> Email </label>
+            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label> Número de documento </label>
+            <input type="number" max=9999999 class="form-control" placeholder="Número de documento" formControlName="idNumber">
+          </div>
+
+          <div class="col">
+            <label> Área de trabajo </label>
+            <input type="text" class="form-control" placeholder="Área de trabajo" formControlName="area">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label> Salario </label>
+            <input type="number" step=".01" class="form-control" placeholder="Salario" formControlName="salario">
+          </div>
+
+          <div class="col">
+            <label> Estado </label>
+            <input type="text" class="form-control" placeholder="Estado" formControlName="estado">
+          </div>
+
+        </div>
+
+        <span *ngIf="submitted && newEmployee.invalid" class="badge badge-danger error-form mb-2"> Debe llenar correctamente todos los campos! </span>
+        <span *ngIf="submitted && newEmployee.valid" class="badge badge-danger done-form mb-2"> Empleado añadido correctamente! </span>
+
+        <div class="btn-set">
+          <button type="submit" class="btn btn-custom btn-lg">Agregar</button>
+          <button type="text" class="btn btn-dark btn-lg" routerLink="/list-employees">Volver</button>
+        </div>
+
+      </form>
+      
+    </div>
+  
+  </div>
+  
+</div>
+

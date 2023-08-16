@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="card "> 
+    
+    <div class="card-header thead-properties ">
+      <span class="mb-0 h1 title-table">Lista de empleados</span>
+      
+      <button class="btn btn-lg float-end btn-custom" routerLink="/create-employee">Añadir</button>
+    </div>
+
+    <div class="card-body">
+      <table class="table table-striped ">
+        <thead >
+          <tr>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Fecha de nacimiento</th>
+            <th scope="col">Email</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Área</th>
+            <th scope="col">Salario</th>
+            <th scope="col">Estado</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td>{{ item.data.nombre + ' ' + item.data.apellido}}</td>
+            <td>{{ item.data.birthday }}</td>
+            <td>{{ item.data.email }}</td>
+            <td>{{ item.data.idNumber }}</td>
+            <td>{{ item.data.area }}</td>
+            <td>{{ item.data.salario | currency }}</td>
+            <td>{{ item.data.estado }}</td>
+            <td>
+              <fa-icon class="fa-lg text-info" [icon]="faEdit" style="margin-right: 1rem;" [routerLink]="['/edit-employee/', item.id]"></fa-icon> 
+              <fa-icon class="fa-lg text-danger" [icon]="faTrashCan" (click)="deleteItem(item)"></fa-icon> 
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+            
+  </div>
+
+  
+</div>

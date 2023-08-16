@@ -1,0 +1,56 @@
+<div class="container">
+
+  <div class="card "> 
+    
+    <div class="card-header head-properties ">
+      <span class="mb-0 h1 title-form">Añadir nueva área</span>
+    </div>
+
+    <div class="card-body">
+      <form [formGroup]="newArea" class="create-employee-form" (ngSubmit)="saveArea()">
+
+        <div class="row">
+
+          <div class="col">
+            <label> Código </label>
+            <input type="text" class="form-control" placeholder="Código" formControlName="codigo">
+          </div>
+
+          <div class="col">
+            <label> Nombre </label>
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombre">
+          </div>
+
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <label> Lider </label>
+            <input type="number" class="form-control" placeholder="Lider" formControlName="lider">
+          </div>
+
+          <div class="col">
+            <label> Estado </label>
+            <input type="text" class="form-control" placeholder="Estado" formControlName="estado">
+          </div>
+
+        </div>
+
+        <span *ngIf="submitted && newArea.invalid" class="badge badge-danger error-form mb-2"> Debe llenar correctamente todos los campos! </span>
+        <span *ngIf="submitted && newArea.valid" class="badge badge-danger done-form mb-2"> Area añadida correctamente! </span>
+
+        <div class="btn-set">
+          <button type="submit" class="btn btn-custom btn-lg">Agregar</button>
+          <button type="text" class="btn btn-dark btn-lg" routerLink="/list-areas">Volver</button>
+        </div>
+
+      </form>
+      
+    </div>
+  
+  </div>
+  
+</div>
+
+
